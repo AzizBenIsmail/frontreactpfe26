@@ -1,5 +1,5 @@
 import "./App.css";
-
+import React , {useEffect , useState} from "react";
 function App() {
   //logic
   //1/
@@ -29,6 +29,10 @@ function App() {
     color: "red",
     fontSize: "20px",
   };
+
+  //const count = 0;
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState("hello");
   return (
     <div className="App">
       {/* jsx => html + js */}
@@ -72,6 +76,17 @@ function App() {
             </tr>
           ))}
         </table>
+
+        count : {count}
+        <button onClick={() => setCount(count + 1)}>+</button>
+        <button onClick={() => setCount(count - 1)}>-</button>
+        <br />
+        message : {message}
+          <input
+            type="text"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
       </header>
     </div>
   );
